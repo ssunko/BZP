@@ -1,0 +1,90 @@
+<div class="dFiles" id="dTypes">
+<table cellpadding="0" cellspacing="4" style="margin-left:10px;">
+<tr style="height:24px;font:10pt  Arial;">
+    <td>Please Enter Your Info:</td>
+    <td style="width:15px;">&nbsp;</td>
+    <td>Please Select Category:</td>
+    <td style="width:15px">&nbsp;</td>
+    <td><span id="sPSSC" style="visibility:hidden;">Please Select Subcategory:</span></td>
+ </tr>
+<tr>
+    <td valign="top">
+        Please Enter your ZIP:<br />
+        <input type="text" id="txtZIP" class="cssSTextBox" maxlength="5" /><br /><br />
+        <div id="divShowEmail">
+            <input type="checkbox" id="chkShowEmail" onclick="fChkBChecked(this,'txtShowEmail',sUEmail);" /> <span class="cPointer" onclick="fGetObj('chkShowEmail').click();">List this email:</span><br />
+            <input type="text" id="txtShowEmail" class="cssSTextBox" maxlength="50" />
+        </div><br />
+        <div id="divShowPhone">
+            <input type="checkbox" id="chkShowPhone" onclick="fChkBChecked(this,'txtShowPhone',sUPhone);" /> <span class="cPointer" onclick="fGetObj('chkShowPhone').click();">List this phone:</span><br />
+            <input type="text" id="txtShowPhone" class="cssSTextBox" maxlength="20" />
+        </div>        
+    </td>
+    <td>&nbsp;</td>
+    <td id="tdRBs"></td>
+    <td>&nbsp;</td>
+    <td><select id="ddTypes" size="16" style="visibility:hidden;background-color:#e8f9e6;" class="cssDropDown" ondblclick="fADD_ADNext();"></select></td>
+</tr>
+<tr style="height:5px;">
+    <td colspan="5" style="background-image:url('images/1x5blu.GIF');"><img  src="images/1x1px.GIF" /></td>
+</tr>
+<tr>
+    <td colspan = "5" align="center"><input class="cssButton" type="button" id="btnNext" value="Next" onclick="fADD_ADNext();" /></td>
+</tr>
+<tr><td colspan="5" style="color:#f30c38;"><span id="lblAdTypesErr"></span></td></tr>
+</table>
+</div>
+<div id="dFiles" class="dFiles" style="display:none">
+<table cellpadding="0" cellspacing="0" style="margin-left:10px;">
+<tr style=" height:26px;"><td colspan="3" style="font: 10pt  Arial; "> Please enter item info:</td></tr>
+<tr>
+<td colspan="3">
+    <table cellpadding="0" cellspacing="0" style="width:890px;">
+        <tr>
+            <td style="width:80px;"><img src="images/starB10.GIF" /> Title: <br /><span class="spanHlp"> (60 chars max)</span></td>
+            <td style="width:530px;"><input type="text" id="txtTitle" class="cssLTextBox" maxlength="60" data-maxsize="60" data-output="statTitle" />
+            &nbsp;<span id="statTitle" style="font:7pt tahoma;"></span></td>
+            <td style="color:#ffffff;background-color:#638ed0;border:solid 1px #00B050;border-bottom:none;">
+                <span style="margin-left:4px;">Info from previous screen:</span>
+                <img style="height:1px; width:60px;" src="images/1x1px.GIF" />
+                <input type="button" value="change" class="cssSmallButton" onclick="fShowDivTypes(true);" />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:left;"><img src="images/starB10.GIF" /> Short Description: <br /><span class="spanHlp">(300 chars max)</span></td>
+            <td><textarea  wrap="virtual" id="taSDescription" data-maxsize="300" data-output="statSDescription" rows="4"  style="width:500px; height:60px;background:url(images/bg_ta.gif);"></textarea>
+            &nbsp;<span id="statSDescription" style="font:7pt tahoma;"></span></td>
+            <td style="background-color:#ffffff;border:solid 1px #00B050;border-top:none;">
+            <div style="margin-left:30px;font:8pt Tahoma;color:#354963;" id="pCat_Subcat"></div>
+            <div class="ShDiv">ZIP:</div><div id="pZIP"></div>
+            <div class="ShDiv">Email:</div><div id="pEmail"></div>
+            <div class="ShDiv">Phone:</div><div id="pPhone"></div>
+            </td>
+         </tr>
+    </table>
+</td>
+</tr>
+<tr>
+    <td style="width:400px; text-align:left;">
+    <div style="float:left;width:120px">Long Description:</div><div style="float:left;width:80px;" class="spanHlp">(3600 chars max)</div><div style="float:left;width:100px;font:7pt tahoma;">&nbsp;</div><div id="statLDescription" style="float: left;text-align:right;width:96px;font:7pt tahoma;"></div>
+    <textarea wrap="virtual" name="taLDescription" id="taLDescription" data-maxsize="3600" data-output="statLDescription" rows="11" style="width:396px; height:165px;background-image:url(images/bg_ta.gif);"></textarea>
+    </td>
+    <td style="width:11px;">&nbsp;</td>
+    <td style="width:499px;">
+        <div id="dFilesCont"></div>
+        <div style="margin-left:-20px;">
+        <ul>
+        <li> Files cannot be larger than 3MB.</li>
+        <li> Only following image formats are supported: <span style="font: 10pt verdana;color:#252568">bmp, gif, jpg/jpeg, png</span></li>
+        </ul>
+        </div>
+        <div style="text-align:left;">
+        <input onclick="fStartOverAddAd();" id="btnClear" class="cssButton" type="button" value="Start Over" />
+        <input onclick="fSaveAdd();" id="btnFileSubm" class="cssButton" type="button" value="Submit" /></div>
+    </td>
+</tr>
+<tr><td colspan="3">Required fields are marked with an asterisk &nbsp;<img src="images/starB10.GIF" /></td></tr>
+<tr><td colspan="3" style="color:#f30c38;"><span id="lblAddAdErr"></span></td></tr>
+</table>
+</div>
+<input type="hidden" id="hClassifiedID" name="hClassifiedID" />

@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MPmain.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>BZP</title>
+    <script type="text/javascript" src="js\validation.js"></script>
+    <script type="text/javascript" src="js\main.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.5.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="css\main.css" />
+    <link rel="shortcut icon" href="images/bzp.ico" />
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body style="background-image:url('images/BodyBG.jpg'); visibility:hidden" id="bzp_body">
+    <form id="frmMPMain" runat="server">
+    <table cellpadding="0" cellspacing="0" style="text-align:left; margin-left:10px;width:982px; background-image:url('images/MainHeaderBG.jpg');">
+    <tr>
+        <td>
+            <div style="height:60px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="width:760px;">
+                            <ul id="topMenu">
+                                <li ><img src="images/BZP.GIF" alt='' /></li >
+                                <li onclick="fGoToPage('Home.aspx','mnuHome')"><a id="mnuHome">Home</a></li >&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <li onclick="fGoToPage('Search.aspx', 'mnuSearch')"><a id="mnuSearch">Search</a></li >&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <li onclick="fGoToPage('AddAd.aspx','mnuAddAd')"><a id="mnuAddAd">Add Ad</a></li >&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <li onclick="fGoToPage('Login.aspx','mnuLogin')"><a id="mnuLogin"><% if (Session["UName"] == null) { %>Login / Register <%}else{%>Edit Profile<%}%></a></li >&nbsp;&nbsp;|&nbsp;&nbsp;
+                                <li onclick="fGoToPage('FAQ.aspx','mnuFAQ')"><a id="mnuFAQ">FAQ</a></li >
+                                <span runat="server" id="spnLogOffSep">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                                <li runat="server" onclick="fLogOff();" id="liLogOff"><a id="mnuLogOff">Log Off</a></li > 
+                            </ul>
+                        </td>
+                        <td align="right">
+                            <asp:Label ID="lblUser" CssClass="cssRegText" runat="server"></asp:Label><br />
+                            <asp:Label ID="lblDate" CssClass="cssRegText" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <asp:ContentPlaceHolder ID="ContentBox" runat="server" />
+            </td>
+        </tr>
+        <tr style="background-color:#CADFFA;">
+            <td>
+                <div style="height:20px; text-align:left;" id="divFooter">
+                     <br style="font:2pt Arial" /><span class="gray_link"> Feedback </span>
+                </div>
+                <div style="height:20px; text-align:center;" id="divFooter1">                
+                    <span class="gray_link">&copy; <asp:Label ID="lblYear" runat="server" /> BZPage</span>
+                </div>
+                <div style="height:20px; text-align:right;" id="divFooter2">
+                    <span class="gray_link"> About </span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+<asp:PlaceHolder ID="mpScriptPH" runat="server" />
+</body>
+</html>

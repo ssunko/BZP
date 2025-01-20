@@ -1,0 +1,96 @@
+﻿<div id="divSearchOpts" style="font: 9pt Arial;color: #004E98;background-color:#F4F9FD; height:400px;width:840px;border:solid 1px #CDE1F9;">
+<table style="margin-left:10px;margin-top:10px;" id="tblSearchWhat" cellpadding="4" cellspacing="0" width="98%">
+<tr><td colspan="2">Search for:</td></tr>
+<tr>
+<td align="left" style="color:#FFFFFF;background-color:#52789A;background-repeat:repeat-y ;background-image:url('images/WhatHBG.gif');">
+<select class="cssDropDownShort" id="ddSearchOpt" size="1">
+<option value="1" selected="selected">Exact phrase</option>
+<option value="2">All words, any order</option>
+<option value="3">Any word from list</option>
+</select>
+<img style="height:1px; width:10px;" src="images/1x1px.GIF" />
+<input type="text" id="sTxtSearchFor" maxlength="50" style="color:#002B57;width:400px;" />
+</td>
+<td align="left" style="color:#FFFFFF;background-color:#52789A;">
+<input id="rbSrchTit" style="border:none" type="radio" name="rbSearchWhere" value="Tit" checked />
+<span class="cPointer" onclick="fGetObj('rbSrchTit').click();">Title only</span>
+<input id="rbSrchDesc" style="border:none" type="radio" name="rbSearchWhere" value="Desc" />
+<span class="cPointer" onclick="fGetObj('rbSrchDesc').click();">Title and description</span>
+</td>
+</tr>
+</table>
+<div><img height="5px" src="images/1x1px.GIF" /></div>
+<table border="0" style="margin-left:10px;margin-top:10px;" id="tblSearchWhere" cellpadding="4" cellspacing="0" width="98%">
+<tr>
+<td style="color:#FFFFFF; background-color:#52789A;width:264px;">
+    <input id="rSBZIP" style="border:none" onclick="fSelectSearchBy(0)" type="radio" name="rbSearchBy" value="ZIP" checked>
+    <span class="cPointer" onclick="fGetObj('rSBZIP').click();">Search within</span>
+    <select style="color:#F4F9FD;background-color:#52789A;"  id="cboSearchWithin" ><option value="10" class="OptSW">&nbsp;&nbsp;10 miles</option><option value="20" class="OptSW">&nbsp;&nbsp;20 miles</option><option value="30" class="OptSW" selected="selected">&nbsp;&nbsp;30 miles</option><option value="40" class="OptSW">&nbsp;&nbsp;40 miles</option><option value="50" class="OptSW">&nbsp;&nbsp;50 miles</option><option value="75" class="OptSW">&nbsp;&nbsp;75 miles</option><option value="100" class="OptSW">100 miles</option><option value="150" class="OptSW">150 miles</option><option value="250" class="OptSW">250 miles</option><option value="500" class="OptSW">500 miles</option><option value="0" class="OptSW">Countrywide</option></select>
+    <span class="cPointer" onclick="fGetObj('rSBZIP').click();">of ZIP</span>
+</td>
+<td style="color:#FFFFFF; background-color:#52789A;width:20px;">OR</td>
+<td style="text-align:left;color:#FFFFFF;background-color:#52789A;">
+<input id="rSBStC" style="border:none" onclick="fSelectSearchBy(1)" type="radio" name="rbSearchBy" value="StC" >
+    <span class="cPointer" onclick="fGetObj('rSBStC').click();">Search by city</span> 
+</td>
+<td align="right" style="color:#FFFFFF;width:360px;background-repeat:repeat-y ;background-image:url('images/WhereHBG.gif');">
+<img src="images/iWhere.gif" /></td>
+</tr>
+<tr>
+<td>
+ZIP: <input type="text" id="sTxtZIP" maxlength="5" style="color:#002B57;width:60px;" onkeypress="return isNumKey(event)" />
+</td>
+<td colspan="3">
+State:&nbsp;&nbsp;DDSTATES City:&nbsp;&nbsp;<input disabled="disabled" type="text" id="sTxtCity" style="width:180px;color:#002B57;"  />
+</td>
+</tr>
+</table>
+<br />
+<div style="background-image:url('images/1x5blu.GIF');"><img width="300px" height="5px" src="images/1x1px.GIF" /></div>
+<img style="margin-left:10px;cursor:pointer;" id="imgAdvancedOpt" src="images/plus_ico.gif" onclick="fShowAdvancedOpt();" />
+<span id="dShowAdvancedOpt" style="margin-left:10px;" class="gray_link" onclick="fShowAdvancedOpt();">Advanced Options</span>
+<img width="688px" height="1px" src="images/1x1px.GIF" /><input type="checkbox" id="chUseAdvancedOpt" style="border:none;" onclick="fShowAdvancedOpt();" />
+<div id="dAdvancedOpt" style="margin-left:10px;display:none;">
+<table cellpadding="2px" cellspacing="0">
+<tr>
+<td><input type="checkbox" id="chkOnlyPics" style="margin-left:-1px;border:none;" />
+<span class="cPointer" onclick="fGetObj('chkOnlyPics').click();">Only show items with pictures</span></td>
+<td class="TD_SEP">&nbsp;</td>
+<td>Date from:</td>
+<td><input type="text" class="txtDate" id="txtDFrom" maxlength="10" /></td>
+<td class="TD_SEP">&nbsp;</td>
+<td>Exclude words: </td>
+<td><input type="text" id="txtExclude" maxlength="30" style="color:#002B57;width:260px;"></td>
+</tr>
+<tr>
+<td> Priced from: <input type="text" id="txtPriceFrom" maxlength="10" style="color:#002B57;width:70px;" onkeypress="return isNumKey(event)">
+to: <input type="text" id="txtPriceTo" maxlength="10" style="color:#002B57;width:70px;" onkeypress="return isNumKey(event)">
+</td>
+<td class="TD_SEP">&nbsp;</td>
+<td>Date to:</td>
+<td><input type="text" class="txtDate" id="txtDTo" maxlength="10" /></td>
+<td class="TD_SEP">&nbsp;</td>
+<td> Exclude: </td>
+<td><select class="cssDropDownShort" id="ddExcludeOpt" size="1">
+<option value="1" selected="selected">Exact phrase</option>
+<option value="2">Any word from list</option>
+</select></td>
+</tr>
+</table>
+</div>
+<br />
+<div style="background-image:url('images/1x5blu.GIF');"><img width="5px" height="5px" src="images/1x1px.GIF" /></div>
+<table style="margin-left:10px;margin-top:10px;" id="tblSearchCategory" cellpadding="0" cellspacing="0" width="98%">
+<tr>
+<td align="left">
+Please select category:&nbsp;
+<select onchange="fddTypesChange(this.selectedIndex)" id="ddTypes" style="margin-bottom:3px;visibility:hidden;" class="cssDropDown"></select>
+&nbsp;&nbsp;&nbsp;<select id="ddCategories" style="margin-bottom:3px;visibility:hidden;" class="cssDropDown"></select>
+</td>
+</tr>
+</table>
+<br />
+<div style="text-align:center"><input class="cssButton" type="button" id="btnSearch" value="Search" onclick="fSearch();" /></div>
+<br />
+<div style="color:#f30c38;"><span id="lblSearchErr"></span></div>
+</div>

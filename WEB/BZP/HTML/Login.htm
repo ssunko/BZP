@@ -1,0 +1,29 @@
+<div style="background-color:#F4F9FD; height:260px;width:420px;border:solid 1px #CDE1F9;">
+<table id="tblPanel">
+<tr style=" height:48px;"><td colspan="2" style="font: 10pt  Arial; "> Please Login:</td></tr>
+<tr>
+<td>User Name or Email:</td>
+<td><input type="text" id="txtUserName" class="cssTextBox" maxlength="50" /></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" id="txtPassword" class="cssTextBox" maxlength="20"/></td>
+</tr>
+<tr>
+<td colspan="2" align="right"><input class="cssButton" type="button" id="btnLogin" value="Login" onclick="fLogin();" />
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="cursor:pointer;" onclick="fGetObj('chkRememberMe').checked=!fGetObj('chkRememberMe').checked;">Remember me </span><input type="checkbox" id="chkRememberMe" /></td>
+</tr>
+<tr style="height:10px;"><td colspan="2">&nbsp;</td></tr>
+<tr style="height:1px;">
+<td colspan="2" style="background-image:url('images/1x5blu.GIF');"><img  src="images/1x1px.GIF" /></td>
+</tr>
+<tr style="height:10px;"><td colspan="2">&nbsp;</td></tr>
+<tr>
+<td colspan="2">If you don't have an Account yet, please <span class="spn_link" title="Register" onclick="fMCH(13)">click here</span> to create one.<br />It is free of charge and very easy to do.
+</td>
+</tr>
+<tr>
+<td colspan="2" style="color:#f30c38;"><span id="lblLoginErr"></span></td>
+</tr>
+</table>
+</div>
